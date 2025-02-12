@@ -255,6 +255,7 @@ usage () {
   echo "show-build-deps (bdeps) <pkgname>             - Show required build dependencies for <pkgname>."
   echo "show-deps (rdeps) <pkgname>                   - Show required run-time dependencies for <pkgname>."
   echo "uninstall (un) <pkgname>                      - Uninstall and purge distfiles for <pkgname>."
+  echo "show-sys-updates (ssu)                        - List all pkgs that can be updated."
   echo "update-bulk (upb)                             - Rebuilds all packages in the system repositories that are outdated."
   echo "update-check (upc) <pkgname>                  - Check upstream site of <pkgname> for new releases."
   echo "update-sys (ups)                              - Rebuilds packages in system and updates them."
@@ -598,6 +599,11 @@ case "$cmd" in
   show-repo-updates|sru)
     msg -n "Printing the list of outdated packages "
     wrapcommand ./xbps-src show-repo-updates
+  ;;
+
+  show-sys-updates|ssu)
+    msg -n "Printing the list of packages that can be updated"
+    wrapcommand ./xbps-src show-sys-updates
   ;;
 
   uninstall|un)
