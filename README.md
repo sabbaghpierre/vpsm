@@ -14,7 +14,7 @@ Strongly inspired by [vpm][3] (originally created by [Armin Jenewein][4]) and [v
 
 ## Instalation
 ### 0. Fork Void Linux’s void-packages repository
-### 1. Clone the void-packages repository forked
+### 1. Clone the void-packages repository forked (OR the upstream repo, if we want to build packages from upstream)
 On my enviroment I like keep it inside my `$HOME` path
 ```bash
 $ git clone git@github.com:my-github-username/void-packages.git ~/.void-packages
@@ -28,7 +28,7 @@ $ echo "export XBPS_DISTDIR=$HOME/.void-packages" >> ~/.zshrc
 
 ### 3. Clone this repository
 ```bash
-$ git clone https://github.com/sinetoami/vpsm.git
+$ git clone https://github.com/sabbaghpierre/vpsm.git
 ```
 
 ### 4. Add the `vspm` executable to `PATH`
@@ -39,7 +39,7 @@ export PATH=$PATH:/path/to/vpsm/directory
 I like to create a hidden  `.bin` directory on my `$HOME` path and add it to `$PATH` var, move/copy/link the `vpsm` executable. But you can do it any way you like.
 ```bash
 $ mkdir ~/.bin
-$ git clone https://github.com/sinetoami/vpsm.git ~/vpsm
+$ git clone https://github.com/sabbaghpierre/vpsm.git ~/vpsm
 $ cd vpsm
 $ ln -s ~/vpsm/vpsm ~/.bin/
 $ echo "export PATH=$PATH:$HOME/.bin" >> ~/.zshrc
@@ -101,6 +101,7 @@ XBPS-SRC SUBCOMMANDS:
   show-build-deps (bdeps) <pkgname>             - Show required build dependencies for <pkgname>.
   show-deps (rdeps) <pkgname>                   - Show required run-time dependencies for <pkgname>.
   uninstall (un) <pkgname>                      - Uninstall and purge distfiles for <pkgname>.
+  show-sys-updates (ssu)                        - List all pkgs that can be updated.
   update-bulk (upb)                             - Rebuilds all packages in the system repositories that are outdated.
   update-check (upc) <pkgname>                  - Check upstream site of <pkgname> for new releases.
   update-sys (ups)                              - Rebuilds packages in system and updates them.
